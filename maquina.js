@@ -51,4 +51,11 @@ let gramosRestantes = gramosDisponibles - 0;
 let lecheRestante = lecheDisponible - 0;
 
 let precioDosCapuchinos = capuchino * 2;
+let precioDosCafeAmericano = cafeAmericano * 2;
+let precioDosMocachinos = mocachino * 2;
+let precioDosChocolateCaliente = chocolateCaliente * 2;
+let precioDosLecheCaliente = lecheCaliente * 2;
 
+let lecheUtilizadaCapuchino = lecheCapuchino * cantidadCapuchinos;
+let lecheUtilizadaMocachino = lecheMocachino * cantidadMocachinos;
+let lecheUtilizadaCaliente = lecheParaLecheCaliente * cantidadLecheCaliente;
