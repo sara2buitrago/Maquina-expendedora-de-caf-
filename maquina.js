@@ -1,4 +1,3 @@
-
 // Productos y precios
 
 const capuchino = 4000;
@@ -27,6 +26,9 @@ let gramosDisponibles = 1000;
 
 let dineroIngresado = 5000;
 
+let precio = 0;
+
+
 // Stock de productos
 
 let stockCapuchino = 15;
@@ -45,9 +47,7 @@ let vueltas = 0;
 // Calcular cambio
 
 let cambio = dineroIngresado - 0;
-
 let gramosRestantes = gramosDisponibles - 0;
-
 let lecheRestante = lecheDisponible - 0;
 
 let precioDosCapuchinos = capuchino * 2;
@@ -56,58 +56,89 @@ let precioDosMocachinos = mocachino * 2;
 let precioDosChocolateCaliente = chocolateCaliente * 2;
 let precioDosLecheCaliente = lecheCaliente * 2;
 
+let cantidadCapuchinos = 0;
+let cantidadMocachinos = 0;
+let cantidadLecheCaliente = 0;
+
 let lecheUtilizadaCapuchino = lecheCapuchino * cantidadCapuchinos;
 let lecheUtilizadaMocachino = lecheMocachino * cantidadMocachinos;
 let lecheUtilizadaCaliente = lecheParaLecheCaliente * cantidadLecheCaliente;
 
-console.log("Dinero ingresado", dineroIngresado)
-console.log("Cambio", cambio)
-console.log("Dinero insuficiente", dineroInsuficiente)
+let dineroInsuficiente = 0;
 
-//estructura de control
+console.log("Dinero ingresado", dineroIngresado);
+console.log("Cambio", cambio);
+console.log("Dinero insuficiente", dineroInsuficiente);
 
-//Seleccionar producto
+// Estructura de control
+
+// Seleccionar producto
+
 
 let opcionCafe;
 
 do {
-    console.log("1. Capuchino")
-    console.log("2. Cafe americáno")
-    console.log("3. Mocachino")
-    console.log("4. Chocolate caliente")
-    console.log("5. Leche caliente")
+    console.log("1. Capuchino");
+    console.log("2. Cafe americano");
+    console.log("3. Mocachino");
+    console.log("4. Chocolate caliente");
+    console.log("5. Leche caliente");
+
+    opcionCafe = Number(prompt("Selecciona una opción del 1 al 5"));
+
+} while (opcionCafe < 1 || opcionCafe > 5);
+
+// Relacionar selección con producto
+
+switch (opcionCafe) {
+
+    case 1:
+        productoSeleccionado = "Capuchino";
+        break;
+
+    case 2:
+        productoSeleccionado = "Americano";
+        break;
+
+    case 3:
+        productoSeleccionado = "Mocachino";
+        break;
+
+    case 4:
+        productoSeleccionado = "Chocolate Caliente";
+        break;
+
+    case 5:
+        productoSeleccionado = "Leche Caliente";
+        break;
 }
 
-while (opcionCafe < 1 || opcionCafe > 5)
+console.log("Producto seleccionado:", productoSeleccionado);
+
 // Valor del producto
 
-let productoSeleccionado = prompt("¿Qué producto deseas? capuchino, americano, mocachino, chocolate o leche");
+productoSeleccionado = prompt("¿Qué producto deseas? Capuchino, Americano, Mocachino, Chocolate Caliente o Leche Caliente");
 
 switch (productoSeleccionado) {
     case "Capuchino":
-    console.log("capuchino $" + capuchino)
-    break;
+        console.log("Capuchino $" + capuchino);
+        break;
 
-switch (productoSeleccionado) {
     case "Americano":
-    console.log("Cafe Americáno $" + cafeAmericano);
-    break;
+        console.log("Cafe Americano $" + cafeAmericano);
+        break;
 
-switch (productoSeleccionado) {
     case "Mocachino":
-    console.log("Mocachino $" + mocachino);
-    break;
+        console.log("Mocachino $" + mocachino);
+        break;
 
-switch (productoSeleccionado) {
     case "Chocolate Caliente":
-    console.log("Chocolate Caliente $" + chocolateCaliente)
-    break; 
+        console.log("Chocolate Caliente $" + chocolateCaliente);
+        break;
 
-switch (productoSeleccionado) {
     case "Leche Caliente":
-    console.log("Leche caliente $" + lecheCaliente)
-    break;
-   
+        console.log("Leche caliente $" + lecheCaliente);
+        break;
 }
 
 // COMPRA EXITOSA
@@ -120,7 +151,7 @@ switch (productoSeleccionado) {
 
     case "Americano":
         vueltas = dineroIngresado - cafeAmericano;
-        console.log("Compra de cafe americáno exitosa, tus vueltas son:", vueltas);
+        console.log("Compra de cafe americano exitosa, tus vueltas son:", vueltas);
         break;
 
     case "Mocachino":
@@ -137,7 +168,11 @@ switch (productoSeleccionado) {
         vueltas = dineroIngresado - lecheCaliente;
         console.log("Compra de leche caliente exitosa, tus vueltas son:", vueltas);
         break;
-    
+
     default:
+        console.log("Producto no válido");
         break;
 }
+
+// validar dinero 
+
