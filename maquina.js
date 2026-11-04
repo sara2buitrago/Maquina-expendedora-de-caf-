@@ -141,6 +141,46 @@ switch (productoSeleccionado) {
         break;
 }
 
+
+// Dinero insuficiente  
+
+switch (productoSeleccionado) {
+
+    case "Capuchino":
+        if (dineroIngresado < capuchino) {
+            console.log("Dinero insuficiente para comprar capuchino");
+        }
+        break;
+
+    case "Americano":
+        if (dineroIngresado < cafeAmericano) {
+            console.log("Dinero insuficiente para comprar cafe americano");
+        }
+        break;
+
+    case "Mocachino":
+        if (dineroIngresado < mocachino) {
+            console.log("Dinero insuficiente para comprar mocachino");
+        }
+        break;
+
+    case "Chocolate Caliente":
+        if (dineroIngresado < chocolateCaliente) {
+            console.log("Dinero insuficiente para comprar chocolate caliente");
+        }
+        break;
+
+    case "Leche Caliente":
+        if (dineroIngresado < lecheCaliente) {
+            console.log("Dinero insuficiente para comprar leche caliente");
+        }
+        break;
+
+    default:
+        console.log("Producto no válido");
+        break;
+}
+
 // COMPRA EXITOSA
 
 switch (productoSeleccionado) {
@@ -174,5 +214,16 @@ switch (productoSeleccionado) {
         break;
 }
 
-// validar dinero 
+// Validar dinero insuficiente
 
+if (dineroIngresado < capuchino && productoSeleccionado === "Capuchino") {
+    console.log("Dinero insuficiente para comprar capuchino");
+} else if (dineroIngresado < cafeAmericano && productoSeleccionado === "Americano") {
+    console.log("Dinero insuficiente para comprar cafe americano");
+} else if (dineroIngresado < mocachino && productoSeleccionado === "Mocachino") {
+    console.log("Dinero insuficiente para comprar mocachino");
+} else if (dineroIngresado < chocolateCaliente && productoSeleccionado === "Chocolate Caliente") {
+    console.log("Dinero insuficiente para comprar chocolate caliente");
+} else if (dineroIngresado < lecheCaliente && productoSeleccionado === "Leche Caliente") {
+    console.log("Dinero insuficiente para comprar leche caliente");
+}
