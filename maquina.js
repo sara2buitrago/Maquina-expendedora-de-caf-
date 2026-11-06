@@ -37,6 +37,7 @@ let stockLecheCaliente = 15;
 
 let lecheDisponible = 1000;
 
+
 // Compra
 
 let productoSeleccionado = "capuchino";
@@ -87,6 +88,19 @@ do {
     opcionCafe = Number(prompt("Selecciona una opción del 1 al 5"));
 
 } while (opcionCafe < 1 || opcionCafe > 5);
+
+// seleccionar el tamaño de los vasos
+
+let tamañoVaso;
+
+do {
+    console.log("1. Grande");
+    console.log("2. Mediano");
+    console.log("3. Pequeño");
+
+    tamañoVaso = Number(prompt("Selecciona el tamaño del vaso: 1. Grande, 2. Mediano, 3. Pequeño"));
+
+} while (tamañoVaso < 1 || tamañoVaso > 3);
 
 // Relacionar selección con producto
 
@@ -213,8 +227,6 @@ switch (productoSeleccionado) {
         console.log("Producto no válido");
         break;
 }
-
-
 
 // mensaje de compra exitosa
 
