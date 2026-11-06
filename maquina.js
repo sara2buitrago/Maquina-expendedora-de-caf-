@@ -24,8 +24,6 @@ let gramosDisponibles = 1000;
 
 // Dinero ingresado
 
-let dineroIngresado = 5000;
-
 let precio = 0;
 
 
@@ -65,6 +63,8 @@ let lecheUtilizadaMocachino = lecheMocachino * cantidadMocachinos;
 let lecheUtilizadaCaliente = lecheParaLecheCaliente * cantidadLecheCaliente;
 
 let dineroInsuficiente = 0;
+
+let dineroIngresado = Number(prompt("Ingresa el dinero para tu compra"));
 
 console.log("Dinero ingresado", dineroIngresado);
 console.log("Cambio", cambio);
@@ -214,16 +214,9 @@ switch (productoSeleccionado) {
         break;
 }
 
-// Validar dinero insuficiente
 
-if (dineroIngresado < capuchino && productoSeleccionado === "Capuchino") {
-    console.log("Dinero insuficiente para comprar capuchino");
-} else if (dineroIngresado < cafeAmericano && productoSeleccionado === "Americano") {
-    console.log("Dinero insuficiente para comprar cafe americano");
-} else if (dineroIngresado < mocachino && productoSeleccionado === "Mocachino") {
-    console.log("Dinero insuficiente para comprar mocachino");
-} else if (dineroIngresado < chocolateCaliente && productoSeleccionado === "Chocolate Caliente") {
-    console.log("Dinero insuficiente para comprar chocolate caliente");
-} else if (dineroIngresado < lecheCaliente && productoSeleccionado === "Leche Caliente") {
-    console.log("Dinero insuficiente para comprar leche caliente");
-}
+
+// mensaje de compra exitosa
+
+let mensaje = "Gracias por tu compra, vuelve pronto";
+console.log(mensaje); 
