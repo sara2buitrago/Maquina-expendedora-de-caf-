@@ -64,8 +64,7 @@ let lecheUtilizadaMocachino = lecheMocachino * cantidadMocachinos;
 let lecheUtilizadaCaliente = lecheParaLecheCaliente * cantidadLecheCaliente;
 
 let dineroInsuficiente = 0;
-
-let dineroIngresado = Number(prompt("Ingresa el dinero para tu compra"));
+let dineroIngresado = 0;
 
 console.log("Dinero ingresado", dineroIngresado);
 console.log("Cambio", cambio);
@@ -88,6 +87,45 @@ do {
     opcionCafe = Number(prompt("Selecciona una opción del 1 al 5"));
 
 } while (opcionCafe < 1 || opcionCafe > 5);
+
+// Seleccionar dinero a ingresar
+
+let opcionDinero;
+
+do {    
+    console.log("¿Cuánto dinero deseas ingresar?");
+    console.log("1. $2000");
+    console.log("2. $5000");   
+    console.log("3. $10000");
+    console.log("4. $20000");
+
+    opcionDinero = Number(prompt("Selecciona una opción del 1 al 4"));
+
+} while (opcionDinero < 1 || opcionDinero > 4);
+
+switch (opcionDinero) {
+    case 1:
+        dineroIngresado = 2000;
+        console.log("Dinero ingresado = 2000");
+        break;
+
+    case 2:
+        dineroIngresado = 5000;
+        console.log("Dinero ingresado = 5000");
+        break;
+
+    case 3:
+        dineroIngresado = 10000;
+        console.log("Dinero ingresado = 10000");
+        break;  
+
+    case 4:     
+    dineroIngresado = 20000;
+    console.log("Dinero ingresado = 20000");
+    break;
+}
+
+console.log("Dinero ingresado:", dineroIngresado);
 
 // Relacionar selección con producto
 
