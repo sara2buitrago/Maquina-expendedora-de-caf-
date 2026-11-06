@@ -95,50 +95,32 @@ switch (opcionCafe) {
 
     case 1:
         productoSeleccionado = "Capuchino";
+        console.log("Producto seleccionado: Capuchino");
+        console.log("Precio: $" + capuchino);
         break;
 
     case 2:
         productoSeleccionado = "Americano";
+        console.log("Producto seleccionado: Americano");
+        console.log("Precio: $" + cafeAmericano);
         break;
 
     case 3:
         productoSeleccionado = "Mocachino";
+        console.log("Producto seleccionado: Mocachino");
+        console.log("Precio: $" + mocachino);
         break;
 
     case 4:
         productoSeleccionado = "Chocolate Caliente";
+        console.log("Producto seleccionado: Chocolate Caliente");
+        console.log("Precio: $" + chocolateCaliente);
         break;
 
     case 5:
         productoSeleccionado = "Leche Caliente";
-        break;
-}
-
-console.log("Producto seleccionado:", productoSeleccionado);
-
-// Valor del producto
-
-productoSeleccionado = prompt("¿Qué producto deseas? Capuchino, Americano, Mocachino, Chocolate Caliente o Leche Caliente");
-
-switch (productoSeleccionado) {
-    case "Capuchino":
-        console.log("Capuchino $" + capuchino);
-        break;
-
-    case "Americano":
-        console.log("Cafe Americano $" + cafeAmericano);
-        break;
-
-    case "Mocachino":
-        console.log("Mocachino $" + mocachino);
-        break;
-
-    case "Chocolate Caliente":
-        console.log("Chocolate Caliente $" + chocolateCaliente);
-        break;
-
-    case "Leche Caliente":
-        console.log("Leche caliente $" + lecheCaliente);
+        console.log("Producto seleccionado: Leche Caliente");
+        console.log("Precio: $" + lecheCaliente);
         break;
 }
 
@@ -178,78 +160,61 @@ else {
     
 
 
-// dinero insuficiente 
-switch (productoSeleccionado) {
-
-    case "Capuchino":
-        if (dineroIngresado < capuchino) {
-            console.log("Dinero insuficiente para comprar capuchino");
-        }
-        break;
-
-    case "Americano":
-        if (dineroIngresado < cafeAmericano) {
-            console.log("Dinero insuficiente para comprar cafe americano");
-        }
-        break;
-
-    case "Mocachino":
-        if (dineroIngresado < mocachino) {
-            console.log("Dinero insuficiente para comprar mocachino");
-        }
-        break;
-
-    case "Chocolate Caliente":
-        if (dineroIngresado < chocolateCaliente) {
-            console.log("Dinero insuficiente para comprar chocolate caliente");
-        }
-        break;
-
-    case "Leche Caliente":
-        if (dineroIngresado < lecheCaliente) {
-            console.log("Dinero insuficiente para comprar leche caliente");
-        }
-        break;
-
-    default:
-        console.log("Producto no válido");
-        break;
-}
 
 // COMPRA EXITOSA
 
 switch (productoSeleccionado) {
     case "Capuchino":
-        vueltas = dineroIngresado - capuchino;
-        console.log("Compra de capuchino exitosa, tus vueltas son:", vueltas);
+        if (dineroIngresado >= capuchino) {
+            vueltas = dineroIngresado - capuchino;  
+            alert("Compra de capuchino exitosa, tus vueltas son: $" + vueltas);
+        } else { 
+            alert("Dinero insuficiente para comprar capuchino");
+        }
         break;
 
     case "Americano":
-        vueltas = dineroIngresado - cafeAmericano;
-        console.log("Compra de cafe americano exitosa, tus vueltas son:", vueltas);
+        if (dineroIngresado >= cafeAmericano) {
+            vueltas = dineroIngresado - cafeAmericano;
+            alert("Compra de cafe americano exitosa, tus vueltas son: $" + vueltas);
+        } else {
+            alert("Dinero insuficiente para comprar cafe americano");
+        }
         break;
 
     case "Mocachino":
-        vueltas = dineroIngresado - mocachino;
-        console.log("Compra de cafe mocachino exitosa, tus vueltas son:", vueltas);
+        if (dineroIngresado >= mocachino) {
+            vueltas = dineroIngresado - mocachino;
+            alert("Compra de mocachino exitosa, tus vueltas son: $" + vueltas);
+        } else {
+            alert("Dinero insuficiente para comprar mocachino");
+        }
         break;
 
     case "Chocolate Caliente":
-        vueltas = dineroIngresado - chocolateCaliente;
-        console.log("Compra de chocolate caliente exitosa, tus vueltas son:", vueltas);
+        if (dineroIngresado >= chocolateCaliente) {
+            vueltas = dineroIngresado - chocolateCaliente;
+            alert("Compra de chocolate caliente exitosa, tus vueltas son: $" + vueltas);
+        } else {
+            alert("Dinero insuficiente para comprar chocolate caliente");
+        }
         break;
 
     case "Leche Caliente":
-        vueltas = dineroIngresado - lecheCaliente;
-        console.log("Compra de leche caliente exitosa, tus vueltas son:", vueltas);
+        if (dineroIngresado >= lecheCaliente) {
+            vueltas = dineroIngresado - lecheCaliente;
+            alert("Compra de leche caliente exitosa, tus vueltas son: $" + vueltas);
+        } else {
+            alert("Dinero insuficiente para comprar leche caliente");
+        }
         break;
 
     default:
-        console.log("Producto no válido");
+        alert("Producto no válido");
         break;
 }
 
 // mensaje de compra exitosa
 
 let mensaje = "Gracias por tu compra, vuelve pronto";
-console.log(mensaje); 
+alert(mensaje); 
