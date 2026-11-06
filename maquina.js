@@ -89,19 +89,6 @@ do {
 
 } while (opcionCafe < 1 || opcionCafe > 5);
 
-// seleccionar el tamaño de los vasos
-
-let tamañoVaso;
-
-do {
-    console.log("1. Grande");
-    console.log("2. Mediano");
-    console.log("3. Pequeño");
-
-    tamañoVaso = Number(prompt("Selecciona el tamaño del vaso: 1. Grande, 2. Mediano, 3. Pequeño"));
-
-} while (tamañoVaso < 1 || tamañoVaso > 3);
-
 // Relacionar selección con producto
 
 switch (opcionCafe) {
@@ -156,8 +143,42 @@ switch (productoSeleccionado) {
 }
 
 
-// Dinero insuficiente  
+// stock disponible 
 
+let stockDisponible = 0;
+
+switch (productoSeleccionado) {
+    case "Capuchino":
+        stockDisponible = stockCapuchino;
+        break;
+    
+    case "Americano":
+        stockDisponible = stockCafeAmericano;
+        break;     
+
+    case "Mocachino":
+        stockDisponible = stockMocachino;
+        break;
+
+    case "Chocolate Caliente": 
+        stockDisponible = stockChocolateCaliente;
+        break;
+
+    case "Leche Caliente":
+        stockDisponible = stockLecheCaliente;
+        break;
+}
+
+if (stockDisponible <= 0) {
+    console.log("Producto sin stock, no se puede realizar la compra");
+}
+else {
+    console.log("Hay stock disponible");
+}   
+    
+
+
+// dinero insuficiente 
 switch (productoSeleccionado) {
 
     case "Capuchino":
