@@ -45,7 +45,7 @@ let vueltas = 0;
 
 // Calcular cambio
 
-let cambio = dineroIngresado - 0;
+let cambio = 0;
 let gramosRestantes = gramosDisponibles - 0;
 let lecheRestante = lecheDisponible - 0;
 
@@ -199,57 +199,60 @@ else {
 
 
 
-// COMPRA EXITOSA
+// COMPRA EXITOSA - SISTEMA DE VUELTAS
+if (stockDisponible > 0) {
+    switch (productoSeleccionado) {
+        case "Capuchino":
+            if (dineroIngresado >= capuchino) {
+                vueltas = dineroIngresado - capuchino;
+                alert("Compra de capuchino exitosa, tus vueltas son: $" + vueltas);
+            } else {
+                alert("Dinero insuficiente para comprar capuchino");
+            }
+            break;
 
-switch (productoSeleccionado) {
-    case "Capuchino":
-        if (dineroIngresado >= capuchino) {
-            vueltas = dineroIngresado - capuchino;  
-            alert("Compra de capuchino exitosa, tus vueltas son: $" + vueltas);
-        } else { 
-            alert("Dinero insuficiente para comprar capuchino");
-        }
-        break;
+        case "Americano":
+            if (dineroIngresado >= cafeAmericano) {
+                vueltas = dineroIngresado - cafeAmericano;
+                alert("Compra de cafe americano exitosa, tus vueltas son: $" + vueltas);
+            } else {
+                alert("Dinero insuficiente para comprar cafe americano");
+            }
+            break;
 
-    case "Americano":
-        if (dineroIngresado >= cafeAmericano) {
-            vueltas = dineroIngresado - cafeAmericano;
-            alert("Compra de cafe americano exitosa, tus vueltas son: $" + vueltas);
-        } else {
-            alert("Dinero insuficiente para comprar cafe americano");
-        }
-        break;
+        case "Mocachino":
+            if (dineroIngresado >= mocachino) {
+                vueltas = dineroIngresado - mocachino;
+                alert("Compra de mocachino exitosa, tus vueltas son: $" + vueltas);
+            } else {
+                alert("Dinero insuficiente para comprar mocachino");
+            }
+            break;
 
-    case "Mocachino":
-        if (dineroIngresado >= mocachino) {
-            vueltas = dineroIngresado - mocachino;
-            alert("Compra de mocachino exitosa, tus vueltas son: $" + vueltas);
-        } else {
-            alert("Dinero insuficiente para comprar mocachino");
-        }
-        break;
+        case "Chocolate Caliente":
+            if (dineroIngresado >= chocolateCaliente) {
+                vueltas = dineroIngresado - chocolateCaliente;
+                alert("Compra de chocolate caliente exitosa, tus vueltas son: $" + vueltas);
+            } else {
+                alert("Dinero insuficiente para comprar chocolate caliente");
+            }
+            break;
 
-    case "Chocolate Caliente":
-        if (dineroIngresado >= chocolateCaliente) {
-            vueltas = dineroIngresado - chocolateCaliente;
-            alert("Compra de chocolate caliente exitosa, tus vueltas son: $" + vueltas);
-        } else {
-            alert("Dinero insuficiente para comprar chocolate caliente");
-        }
-        break;
+        case "Leche Caliente":
+            if (dineroIngresado >= lecheCaliente) {
+                vueltas = dineroIngresado - lecheCaliente;
+                alert("Compra de leche caliente exitosa, tus vueltas son: $" + vueltas);
+            } else {
+                alert("Dinero insuficiente para comprar leche caliente");
+            }
+            break;
 
-    case "Leche Caliente":
-        if (dineroIngresado >= lecheCaliente) {
-            vueltas = dineroIngresado - lecheCaliente;
-            alert("Compra de leche caliente exitosa, tus vueltas son: $" + vueltas);
-        } else {
-            alert("Dinero insuficiente para comprar leche caliente");
-        }
-        break;
-
-    default:
-        alert("Producto no válido");
-        break;
+        default:
+            alert("Producto no válido");
+            break;
+    }
+} else {
+    alert("Producto sin stock, no se puede realizar la compra");
 }
 
 // mensaje de compra exitosa
